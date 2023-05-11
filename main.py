@@ -1,0 +1,11 @@
+radio.set_group(2)
+
+def on_button_pressed_a():
+    basic.clear_screen()
+    radio.send_string("smile")
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_received_string(receivedString):
+    basic.show_icon(IconNames.HAPPY)
+    radio.on_received_string(on_received_string)
+
